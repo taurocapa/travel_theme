@@ -22,28 +22,10 @@
             <!-- Destination Section -->
             <div class="container ">
                 <section class="destination ">
-                    <div class="row d-flex justify-content-center ">
-                        <div class="col-lg-3 col-md-8 ml-5 destinations shadow d-flex flex-column align-items-center ">
-                            <h3 class="text-center ">Destinations</h3>
-                            <img class="img-fluid " src="/img/image600-2-.jpg " alt=" ">
-                            <p class="img-fluid ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptate illo praesentium pariatur ea eum assumenda ipsam veniam cum, magnam quod atque officiis facilis quis doloremque similique beatae quasi! Eaque!</p>
-                            <a href="# " class="form-control text-center e-option ">Explore</a>
-                        </div>
-                        <div class="col-lg-3 col-md-8 ml-5 destinations shadow d-flex flex-column align-items-center ">
-                            <h3 class="text-center ">Cruisers</h3>
-                            <img class="img-fluid " src="/img/image600-3-.jpg " alt=" ">
-                            <p class="img-fluid ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptate illo praesentium pariatur ea eum assumenda ipsam veniam cum, magnam quod atque officiis facilis quis doloremque similique beatae quasi! Eaque!</p>
-                            <a href="# " class="form-control text-center e-option ">Explore</a>
-                        </div>
-                        <div class="col-lg-3 col-md-8 ml-5 destinations shadow d-flex flex-column align-items-center ">
-                            <h3 class="text-center ">Hotels</h3>
-                            <img class="img-fluid " src="/img/image600-4-.jpg " alt=" ">
-                            <p class="img-fluid ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptate illo praesentium pariatur ea eum assumenda ipsam veniam cum, magnam quod atque officiis facilis quis doloremque similique beatae quasi! Eaque!</p>
-                            <a href="# " class="form-control text-center e-option ">Explore</a>
-                        </div>
-                    </div>
+                <?php get_template_part( 'template-parts/option', 'page' );?>
+                </section>
             </div>
-            </section>
+            
             <!-- End of Destination Section -->
             <section class="destination-e" style="background-image:url(<?php echo get_post_meta($post_id,'wyw_cmb2_title_exotic_image', true)?>)">
                 <div class="row justify-content-center ">

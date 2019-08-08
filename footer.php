@@ -35,8 +35,8 @@
             <div class="col-md-6  d-flex site-map">
                 <div class="col-md-4 mt-auto">
 
-                    <img class="footer-logo" src="/img/logoprotocolo.png" style="width: 5rem;" alt="">
-                    <img class="footer-logo" src="/img/Virtuoso.gif" style="width: 5rem;" alt="">
+                    <img class="footer-logo" src= <?php echo get_template_directory_uri(  ) . '/img/logoprotocolo.png'?> style="width: 5rem;" alt="">
+                    <img class="footer-logo" src= <?php echo get_template_directory_uri(  ) . '/img/Virtuoso.gif'?> style="width: 5rem;" alt="">
 
                 </div>
                 <div class="col-md-8 mt-auto"><span>Independently affiliated with

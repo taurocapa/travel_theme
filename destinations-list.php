@@ -1,7 +1,7 @@
 <?php 
 
     /**
-     * Template Name: Cruiser List
+     * Template Name: Destinations
      */
 
     get_header();
@@ -18,7 +18,7 @@
     ?>
         <h1><?php echo $titulo;?></h1>
 
-        <?php wyw_query_cruisers('cruiser_class'); ?>
+        <?php wyw_query_cruisers('destinations_class'); ?>
 <?php
     endwhile;
 ?>

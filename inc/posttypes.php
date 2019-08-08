@@ -107,4 +107,57 @@ function wyw_posttype_hotels() {
 add_action( 'init', 'wyw_posttype_cruiser' );
 
 
+// Custom - Posts para los destinos
+function wyw_posttype_destinations() {
+    $labels = array(
+        'name'                  => _x( 'Destinations', 'wyw' ),
+        'singular_name'         => _x( 'destinations',  'wyw' ),
+        'menu_name'             => _x( 'Destinations', 'Admin Menu text', 'wyw' ),
+        'name_admin_bar'        => _x( 'destinations', 'Add New on Toolbar', 'wyw' ),
+        'add_new'               => __( 'Add New', 'wyw' ),
+        'add_new_item'          => __( 'Add New destinations', 'wyw' ),
+        'new_item'              => __( 'New destinations', 'wyw' ),
+        'edit_item'             => __( 'Edit destinations', 'wyw' ),
+        'view_item'             => __( 'View destinations', 'wyw' ),
+        'all_items'             => __( 'All destinations', 'wyw' ),
+        'search_items'          => __( 'Search destinations', 'wyw' ),
+        'parent_item_colon'     => __( 'Parent destinations:', 'wyw' ),
+        'not_found'             => __( 'destinations not found.', 'wyw' ),
+        'not_found_in_trash'    => __( 'destinations not found in trash', 'wyw' ),
+        'featured_image'        => _x( 'Feature Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'wyw' ),
+        'set_featured_image'    => _x( 'Add Feature Image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'wyw' ),
+        'remove_featured_image' => _x( 'del Feature Image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'wyw' ),
+        'use_featured_image'    => _x( 'use Feature Image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'wyw' ),
+        'archives'              => _x( 'destinations Files', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'wyw' ),
+        'insert_into_item'      => _x( 'Add destinations', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'wyw' ),
+        'uploaded_to_this_item' => _x( 'Uploaded in destinations', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'wyw' ),
+        'filter_items_list'     => _x( 'destinations List Filter', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'wyw' ),
+        'items_list_navigation' => _x( 'destinations Nav', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'wyw' ),
+        'items_list'            => _x( 'destinations List', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'wyw' ),
+    );
+ 
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'destinations-list' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'menu_icon'          => 'dashicons-location',//'dashicons-welcome-learn-more',
+        // true como paginas (pueden tener hijos), false como posts (no tienen hijos)
+        'hierarchical'       => false,
+        'menu_position'      => 6,
+        'supports'           => array( 'title', 'editor',  'thumbnail' ),
+        'show_in_rest'       => true,
+        'rest_base'          => 'destinations-list'
+    );
+ 
+    register_post_type( 'destinations_class', $args );
+}
+add_action( 'init', 'wyw_posttype_destinations' );
+
+
  ?>

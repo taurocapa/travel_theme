@@ -146,6 +146,22 @@ function wyw_setup(){
 
     // thumbnails.
     add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'title-tag' );
+    
+    // images size
+    add_image_size( 'small_image', 220, 180 );
+
+
+    add_theme_support( 'custom-logo', array(
+        'height'      => 70,
+        'width'       => 70,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    ) );
+
+
+
 
 }
 add_action( 'after_setup_theme', 'wyw_setup');

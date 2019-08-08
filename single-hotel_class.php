@@ -5,6 +5,7 @@ get_header();
 
 $post_id = get_the_ID(  );
 while(have_posts(  )): the_post(  );
+
 ?>
 
 <div class="container-fluid d-flex">
@@ -33,6 +34,32 @@ while(have_posts(  )): the_post(  );
             <div class="row justify-content-center mt-3">
                     <?php the_post_thumbnail('medium');?>
             </div>
+
+            <div class="row justify-content-center price-section">
+                    <table class="table table-striped price-list mt-3">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Rooms</th>
+                                <td><?php echo get_post_meta( $post_id, 'wyw_hotel_fields_hotel_address', true )?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Room Style</th>
+                                <td><?php echo get_post_meta( $post_id, 'wyw_hotel_fields_style_room', true )?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Vipe</th>
+                                <td><?php echo get_post_meta( $post_id, 'wyw_hotel_fields_vipe_type', true )?></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Web Site</th>
+
+                                <?php $hotel_site = get_post_meta( $post_id, 'wyw_hotel_fields_hotel_site', true );?>
+                                <td class="social-bar"><a target = "_blank" href="<?php echo esc_url($hotel_site); ?>"><?php echo $hotel_site?></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
 
             <!--inquiry section-->
             <div class="row">

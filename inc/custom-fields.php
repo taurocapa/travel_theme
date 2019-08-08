@@ -158,7 +158,7 @@ function wyw_hotel_fields() {
 
 }
 
-// campos para la seccion cruceros
+// campos para la seccion cruceros y tours
 add_action( 'cmb2_admin_init', 'wyw_cruiser_fields' );
 
 function wyw_cruiser_fields() {
@@ -169,7 +169,7 @@ function wyw_cruiser_fields() {
 	$wyw_cruiser_fields = new_cmb2_box( array(
 		'id'           => $prefix . 'metabox',
 		'title'        => esc_html__( 'Cruiser/Tour Fields', 'cmb2' ),
-		'object_types' => array( 'cruiser_class' ), // Post type
+		'object_types' => array( 'cruiser_class', 'destinations_class' ), // Post type
 		'context'      => 'normal',
 		'priority'     => 'high',
         'show_names'   => true, // Show field names on the left
@@ -178,7 +178,7 @@ function wyw_cruiser_fields() {
 
     $wyw_cruiser_fields->add_field( array(
 		'name' => esc_html__( 'Ship', 'cmb2' ),
-		'desc' => esc_html__( 'Ship Name', 'cmb2' ),
+		'desc' => esc_html__( "Ship Name if it's cruisers", 'cmb2' ),
 		'id'   => $prefix . 'ship',
 		'type' => 'text',
 	) );
@@ -200,7 +200,7 @@ function wyw_cruiser_fields() {
 
 	$wyw_cruiser_fields->add_field( array(
 		'name'    => esc_html__( 'What does include?', 'cmb2' ),
-		'desc'    => esc_html__( 'Input what the cruisers includes', 'cmb2' ),
+		'desc'    => esc_html__( 'Input what the cruisers/tours includes', 'cmb2' ),
 		'id'      => $prefix . 'include',
 		'type'    => 'wysiwyg',
 		'options' => array(
@@ -210,7 +210,7 @@ function wyw_cruiser_fields() {
 
 	$wyw_cruiser_fields->add_field( array(
 		'name'    => esc_html__( 'What does not include?', 'cmb2' ),
-		'desc'    => esc_html__( 'Input what the cruisers does not include (optional)', 'cmb2' ),
+		'desc'    => esc_html__( 'Input what the cruisers/tours does not include (optional)', 'cmb2' ),
 		'id'      => $prefix . 'not_include',
 		'type'    => 'wysiwyg',
 		'options' => array(
@@ -247,7 +247,7 @@ function wyw_itinerry() {
 	$wyw_itinerry = new_cmb2_box( array(
 		'id'           => $prefix . 'metabox',
 		'title'        => esc_html__( 'Itinerary', 'cmb2' ),
-        'object_types' => array('cruiser_class'),
+        'object_types' => array('cruiser_class', 'destinations_class'),
 	) );
 
 	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
@@ -300,7 +300,7 @@ function wyw_content_page_photos() {
 	$wyw_content_page_photos = new_cmb2_box( array(
 		'id'           => $prefix . 'metabox',
 		'title'        => esc_html__( 'Photo Group', 'cmb2' ),
-        'object_types' => array( 'hotel_class', 'cruiser_class' ),
+        'object_types' => array( 'hotel_class', 'cruiser_class','destinations_class' ),
 	) );
 
 	// $group_field_id is the field id string, so in this case: $prefix . 'demo'

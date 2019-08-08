@@ -49,13 +49,12 @@ function wyw_query_hotels($items = -1){
 }
 
 // create cruiser-post
-function wyw_query_cruisers($items = -1){
+function wyw_query_cruisers($post_type, $items = -1){
 
     $args = array (
-        'post_type' => 'cruiser_class',
+        'post_type' => $post_type,
         'post_per_page' => $items
     );
-
     $cruisers = new WP_Query($args);
 
     while($cruisers->have_posts(  )): $cruisers->the_post();?>
@@ -90,4 +89,5 @@ function wyw_query_cruisers($items = -1){
 <?php endwhile; wp_reset_postdata(  ); 
 
 }
+
 ?>
