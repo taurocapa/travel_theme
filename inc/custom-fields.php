@@ -325,4 +325,5 @@ function wyw_content_page_photos() {
 	) );
 
 }
+
 ?>

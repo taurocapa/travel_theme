@@ -90,4 +90,23 @@ function wyw_query_cruisers($post_type, $items = -1){
 
 }
 
+function wyw_query_custom_posts($items = -1){
+
+    $args = array (
+        'post-type'     => 'Opciones',
+        'name'          => 'Opciones',
+        'post_per_page' => $items
+    );
+    $option_name = new WP_Query($args);
+
+    while($option_name->have_posts(  )): $option_name->the_post();
+
+        var_dump($option_name);?>
+
+    <?php endwhile; wp_reset_postdata(  ); 
+
+}
+
+
+
 ?>

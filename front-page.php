@@ -22,7 +22,27 @@
             <!-- Destination Section -->
             <div class="container ">
                 <section class="destination ">
-                <?php get_template_part( 'template-parts/option', 'page' );?>
+                <div class="row d-flex justify-content-center ">
+                    <?php 
+                        $args = array(
+                            'post_type'  => 'page', 
+                            'meta_query' => array( 
+                                array(
+                                    'key'   => '_wp_page_template', 
+                                    'value' => 'template-parts/option.php'
+                                )
+                            )
+                        );
+                        $opciones = new WP_Query($args);
+                         while($opciones->have_posts() ): $opciones->the_post(); ?>
+                        <div class="col-lg-3 col-md-8 ml-5 destinations shadow d-flex flex-column align-items-center">
+
+                            <?php get_template_part('template', 'parts/option');
+                        ?>    
+                        </div>
+                        <?php endwhile; wp_reset_postdata();?>
+                </div>
+
                 </section>
             </div>
             

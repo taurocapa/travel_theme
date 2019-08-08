@@ -3,7 +3,7 @@
 // Custom post (hotels.)
 function wyw_posttype_hotels() {
      $labels = array(
-         'name'                  => _x( 'Hotels', 'wyw' ),
+         'name'                  => _x( 'Opciones', 'wyw' ),
          'singular_name'         => _x( 'Hotel',  'wyw' ),
          'menu_name'             => _x( 'Hotels', 'Admin Menu text', 'wyw' ),
          'name_admin_bar'        => _x( 'Hotel', 'Add New on Toolbar', 'wyw' ),
@@ -45,7 +45,8 @@ function wyw_posttype_hotels() {
          'menu_position'      => 6,
          'supports'           => array( 'title', 'editor',  'thumbnail' ),
          'show_in_rest'       => true,
-         'rest_base'          => 'hotel-list'
+         'rest_base'          => 'hotel-list',
+ 
      );
   
      register_post_type( 'hotel_class', $args );
@@ -57,7 +58,7 @@ function wyw_posttype_hotels() {
 // custom post - Cruisers.
  function wyw_posttype_cruiser() {
     $labels = array(
-        'name'                  => _x( 'Cruiser', 'wyw' ),
+        'name'                  => _x( 'Opciones', 'wyw' ),
         'singular_name'         => _x( 'Cruiser',  'wyw' ),
         'menu_name'             => _x( 'Cruiser', 'Admin Menu text', 'wyw' ),
         'name_admin_bar'        => _x( 'Cruiser', 'Add New on Toolbar', 'wyw' ),
@@ -99,7 +100,7 @@ function wyw_posttype_hotels() {
         'menu_position'      => 6,
         'supports'           => array( 'title', 'editor',  'thumbnail' ),
         'show_in_rest'       => true,
-        'rest_base'          => 'cruiser-list'
+        'rest_base'          => 'cruiser-list',
     );
  
     register_post_type( 'cruiser_class', $args );
@@ -110,7 +111,7 @@ add_action( 'init', 'wyw_posttype_cruiser' );
 // Custom - Posts para los destinos
 function wyw_posttype_destinations() {
     $labels = array(
-        'name'                  => _x( 'Destinations', 'wyw' ),
+        'name'                  => _x( 'Opciones', 'wyw' ),
         'singular_name'         => _x( 'destinations',  'wyw' ),
         'menu_name'             => _x( 'Destinations', 'Admin Menu text', 'wyw' ),
         'name_admin_bar'        => _x( 'destinations', 'Add New on Toolbar', 'wyw' ),
@@ -152,7 +153,9 @@ function wyw_posttype_destinations() {
         'menu_position'      => 6,
         'supports'           => array( 'title', 'editor',  'thumbnail' ),
         'show_in_rest'       => true,
-        'rest_base'          => 'destinations-list'
+        'rest_base'          => 'destinations-list',
+
+
     );
  
     register_post_type( 'destinations_class', $args );
