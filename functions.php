@@ -34,6 +34,23 @@ require_once dirname(__FILE__).'/inc/custom-fields.php';
  * Setup function
  */
 
+/**
+ * Custom Search Form. (search.php)
+ */
+add_filter( 'get_search_form', 'wyw_my_search_form' );
+function wyw_my_search_form( $form ) {
+    $aria_label ='';
+    $form = '<form role="search" ' . $aria_label . 'method="get" id="searchform" class="searchform form-inline my-2 my-lg-0" action="' . esc_url( home_url( '/' ) ) . '">
+                <div>
+                    <label class="screen-reader-text" for="s"></label>
+                    <input class="form-control mr-sm-2" type="text" value="' . get_search_query() . '" name="s" id="s" />
+                    <input class="btn e-option my-2 my-sm-0" type="submit" id="searchsubmit" value="' . esc_attr_x( 'Search', 'submit button' ) . '" />
+                </div>
+            </form>';
+    return $form;
+}
+
+
 add_action( 'init', 'wyw_carousel_photos');
 // Manejo de carrusel de imagenes
 
@@ -150,6 +167,7 @@ function wyw_setup(){
     
     // images size
     add_image_size( 'small_image', 220, 180 );
+    add_image_size( 'dysney-embedded', 1024, 343);
 
 
     add_theme_support( 'custom-logo', array(
@@ -159,7 +177,10 @@ function wyw_setup(){
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
     ) );
-
+    
+    @ini_set( 'upload_max_size' , '64M' );
+    @ini_set( 'post_max_size', '64M');
+    @ini_set( 'max_execution_time', '300' );
 
 
 
@@ -213,7 +234,5 @@ add_action( 'after_setup_theme', 'wyw_setup');
  }
  add_action( 'wp_enqueue_scripts', 'wyw_scripts');
 
-
- 
 
 ?>

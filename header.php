@@ -18,10 +18,11 @@
         <div class="row social-bar d-flex justify-content-end  py-1 pr-5">
             <div class="scroll-page"></div>
             <div class="social-bar">
-                <a href="#" target="_blank"><i class="flaticon flaticon-facebook-logo"></i></a>
-                <a href="#" target="_blank"><i class="flaticon flaticon-instagram"></i></a>
+                <a href="http://instagram.com/wywtravel" target="_blank"><i class="flaticon flaticon-instagram"></i></a>
+<!--                <a href="#" target="_blank"><i class="flaticon flaticon-facebook-logo"></i></a>
                 <a href="#" target="_blank"><i class="flaticon flaticon-linkedin-letters"></i></a>
                 <a href="#" target="_blank"><i class="flaticon flaticon-whatsapp"></i></a>
+-->
             </div>
         </div>
         <!--

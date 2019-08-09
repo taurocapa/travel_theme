@@ -92,11 +92,14 @@ while(have_posts(  )): the_post(  );
             <div class="row justify-content-center mt-3">
                     <?php the_post_thumbnail('medium');?>
             </div>
-
+            <?php
+                $cruisers = get_post( $post_id, 'ARRAY_A','post_type' );
+            
+             if($cruisers['post_type']=='cruiser_class'){ ?>
             <div class="row justify-content-center price-section">
                     <h1><span><img src=<?php echo get_template_directory_uri(  ) . '/img/custom-icons/arrow-right.jpg'?> style="height: 2rem;"></span> <?php echo get_post_meta( $post_id, 'wyw_cruiser_field_price', true )?> <span><img src=<?php echo get_template_directory_uri(  ) . '/img/custom-icons/arrow-left.jpg'?> style="height: 2rem;"></span></h1>
             </div>
-
+             <?php }?>
             <!--inquiry section-->
             <div class="row">
                 <div class="col p-5 text-center ">

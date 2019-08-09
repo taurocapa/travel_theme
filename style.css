@@ -236,8 +236,10 @@ p,
     text-decoration: none!important;
 }
 
-.ef-option>li a {
-    color: white;
+.ef-option>li a,
+.email a:link {
+    color: white!important;
+    text-decoration: none!important;
 }
 
 .ef-option>li a:hover {
@@ -281,6 +283,10 @@ footer {
     text-decoration: none;
     color: white;
     cursor: pointer;
+}
+
+.flaticon::before {
+    margin-left: 0.6rem!important;
 }
 
 
@@ -370,6 +376,22 @@ footer {
 
 /* Inquiry html section*/
 
+.contact-bg {
+    background-color: var(--color-primario-rgba-o);
+}
+
+.contact-size {
+    background-size: cover!important;
+}
+
+.contact-fields {
+    color: white!important;
+}
+
+.contact-button {
+    border: none;
+}
+
 .modal-dialog {
     max-width: 70%;
 }
@@ -378,7 +400,6 @@ footer {
 /* end Inquiry html section*/
 
 .modal-top {
-    background-image: url('/img/the-palm-962785_1920.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -401,7 +422,10 @@ footer {
 }
 
 .inquiry-title {
+    font-size: 40px;
+    font-weight: 600;
     color: white;
+    text-shadow: 2px 2px var(--color-secundario-rgba);
 }
 
 .modal-body {
@@ -412,6 +436,20 @@ footer {
 .modal-body>form div>label,
 .modal-body>form div>input {
     font-size: 12px!important;
+}
+
+
+/* search */
+
+.embedded {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+.search-result:nth-of-type(odd)>.list-group-item {
+    background-color: var(--bg-color)!important;
+    color: var(--color-secundario);
 }
 
 

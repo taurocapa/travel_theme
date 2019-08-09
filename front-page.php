@@ -58,8 +58,11 @@
                     <div class="col-md-6 col-lg-6 px-5 mt-5 hero-resume ">
                         <h1><?php echo get_post_meta($post_id,'wyw_cmb2_title_exotic_place', true)?></h1>
                         <p class="mt-5 "><?php echo get_post_meta($post_id,'wyw_cmb2_title_exotic_place_description', true)?></p>
-                        <?php $destinations = get_page_by_title( 'destinations' );?>
-                        <a href="<?php echo get_permalink( $destinations->ID); ?>" class="text-center e-option ">Explore</a>
+                        <?php $destinations = get_page_by_title( 'destinations' );
+                        if(get_post_meta($post_id,'wyw_cmb2_title_exotic_place_description', true)!=''){
+                        ?>
+                            <a href="<?php echo get_permalink( $destinations->ID); ?>" class="text-center e-option ">Explore</a>
+                    <?php };?>
                     </div>
                 </div>
             </section>

@@ -37,13 +37,26 @@ function scroll_line() {
 }
 
 // Inquiry modal
-function inquiry_call() {
+function inquiry_call(wyw_dir_ajax) {
 
     // creating bootstrap alert.
-
     /**/
-    var html = ' <div class="alert alert-success alert-dismissible fade show" role="alert"> <strong>thank for contact us!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>'
 
-    $('.message').append(html);
-    //alert("here is the inquiry");
+
+    var ajaxurl = wyw_dir_ajax,
+        data = { 'action': clickBtnValue };
+    console.log(data);
+    console.log(ajaxurl);
+
+    $.post(ajaxurl, data,
+        function(response) {
+
+            var html = ' <div class="alert alert-success alert-dismissible fade show" role="alert"> <strong>THANK for contact us!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>'
+
+            $('.message').append(html);
+        },
+    );
+
+
+
 }
